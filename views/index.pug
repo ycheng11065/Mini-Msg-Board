@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header
+    h1= title
+    p Welcome to #{title}
+  main
+    a(href='/new'): button.compose='Send new message'
+    each message in messages
+      p User: #{message.user}
+      p Text: #{message.text}
+      p Date Added: #{message.added}
+      
